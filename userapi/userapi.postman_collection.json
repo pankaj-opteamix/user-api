@@ -12,12 +12,12 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "X-PASSWORD",
+						"key": "PASSWORD",
 						"value": "admin1234",
 						"type": "text"
 					},
 					{
-						"key": "X-USERNAME",
+						"key": "USERNAME",
 						"value": "admin",
 						"type": "text"
 					}
