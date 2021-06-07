@@ -14,9 +14,9 @@ Steps to setup dev environment (using virtual environment):
    pip install -r requirements.txt
 
 4.create a database in your locahost and update the database credentials inside settings.py file now 
-  create Table in your database by using  below these  commands 
+  create Table in your database by using  below  commands 
   
-     python manage.py makemigrations
+  
      python manage.py migrate
    
 
