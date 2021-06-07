@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "96f9fbbe-2613-47b8-afc3-306910a2a4ef",
+		"name": "userapi",
+		"description": "This API allow to create  delete and update  the users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/users/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					},
+					{
+						"key": "X-USERNAME",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/users/",
+				"description": "This API  is used to get the LIst of existing user in our database\r\n\r\nit will return list of objects"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "USERNAME",
+						"value": "admin",
+						"type": "text"
+					},
+					{
+						"key": "PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"pankaj kumar\",\r\n    \"email\":\"pankajkr123@gmail.com\",\r\n    \"password\":\"helloa212\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/",
+				"description": "This API will use to create a new user\r\n\r\nit will return response as object"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/10/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					},
+					{
+						"key": "USERNAME",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/users/10/",
+				"description": "This api will use the get one user info by it's primary id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/10/",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					},
+					{
+						"key": "USERNAME",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"john kumar\",\r\n    \"email\":\"pankajkr123@gmail.com\",\r\n    \"password\":\"helloa212\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/10/",
+				"description": "This is a put request it will allow to create or update a single request"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/10/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					},
+					{
+						"key": "USERNAME",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"pankajkr133@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/10/",
+				"description": "This allow to update user object fileds values"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/users/10/",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "PASSWORD",
+						"value": "admin1234",
+						"type": "text"
+					},
+					{
+						"key": "USERNAME",
+						"value": "admin",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/users/10/",
+				"description": "This API will  allow to Delete a single user object"
+			},
+			"response": []
+		}
+	]
+}
