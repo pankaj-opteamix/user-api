@@ -14,7 +14,6 @@ class UserTests(APITestCase):
         data ={"name":"pam","email":"paaaa@gmail.com","password":"hello"}
         header = {'HTTP_USERNAME': 'admin','HTTP_PASSWORD':'admin1234'}
         response =self.client.post('/users/',data=data, **header)
-        print(response.status_code)
         self.assertEqual(response.status_code,status.HTTP_201_CREATED)
 
     def test_get_list_user(self):
