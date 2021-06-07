@@ -26,7 +26,7 @@ Python manage.py runserver
 
 6. Testing API using postman
 
-Note: - Import the userapi.postman_collection.json file inside your postman it will contain all the api url and request ,response with header
+Note: - Import the userapi/userapi.postman_collection.json file inside your postman it will contain all the api url and request ,response with header
 please use it  it will make your tast easy
 
 7. Running the Unit Tests  Run the tests using the below command
