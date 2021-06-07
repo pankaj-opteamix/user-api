@@ -12,14 +12,14 @@ class UserTests(APITestCase):
             name='Casper', email="casp@gmail.com", password='casper123')
     def test_create_user(self):
         data ={"name":"pam","email":"paaaa@gmail.com","password":"hello"}
-        header = {'HTTP_USERNAME': 'P'}
+        header = {'HTTP_USERNAME': 'admin','HTTP_PASSWORD':'admin1234'}
         response =self.client.post('/users/',data=data, **header)
         print(response.status_code)
         self.assertEqual(response.status_code,status.HTTP_201_CREATED)
 
     def test_get_list_user(self):
-        header = {'HTTP_USERNAME': 'P'}
-        response = self.client.get('/users/')
+        header = {'HTTP_USERNAME': 'admin', 'HTTP_PASSWORD': 'admin1234'}
+        response = self.client.get('/users/',**header)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 class UpdateUserTest(APITestCase):
@@ -31,8 +31,8 @@ class UpdateUserTest(APITestCase):
         user = Users.objects.create(name="mike", email="Tyson@gmail.com", password="11111")
         data = UsersSerializer(user).data
         data.update({'name': 'Changed'})
-
-        response = self.client.put('/users/1/',data)
+        header = {'HTTP_USERNAME': 'admin', 'HTTP_PASSWORD': 'admin1234'}
+        response = self.client.put('/users/1/',data,**header)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
