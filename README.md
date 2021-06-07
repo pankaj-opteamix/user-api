@@ -13,6 +13,7 @@ Steps to setup dev environment (using virtual environment):
 
 4.create a database in your locahost and update the database credentials inside settings.py file now 
   create Table in your database by using  below these  commands 
+  
      python manage.py makemigrations
      python manage.py migrate
    
@@ -27,6 +28,7 @@ Note: - Import the userapi.postman_collection.json file inside your postman it w
 please use it  it will make your tast easy
 
 7. Running the Unit Tests 
+
 Run the tests using the below command
 python manage.py test
 
