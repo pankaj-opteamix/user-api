@@ -1,12 +1,17 @@
 from .models import Users
 from rest_framework.response import Response
 from rest_framework import status
+import logging
+
+logger = logging.getLogger(__name__)
 class User:
     def __init__(self):
         pass
 
     def create_user(self,request):
+        """this function validate the user fields return the response true or false"""
         email= request.data.get('email')
+        logger.info("validating email id")
         if email != None and User.validateEmail(email):
             user = Users.objects.filter(email=email)
             print
@@ -24,6 +29,7 @@ class User:
             validate_email(email)
             return True
         except ValidationError:
+            logger.error('invalid mail id')
             return False
 
 

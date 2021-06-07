@@ -13,8 +13,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import sys
+import logging
+from logging.config import dictConfig
 
 ENVIRONMENT = 'test'
+X_USERNAME = 'admin'
+X_PASSWORD = 'admin1234'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,3 +143,56 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        # 'null': {
+        #     'level':'DEBUG',
+        #     'class':'django.utils.log.NullHandler',
+        # },
+        # 'request_log': {
+        #     'level': 'DEBUG',
+        #     'class': 'logging.FileHandler',
+        #     'filename': log_path + 'request.log',
+        # },
+        # 'app_log': {
+        #     'level': 'DEBUG',
+        #     'class': 'logging.handlers.RotatingFileHandler',
+        #     'filename': log_path + 'request.log',
+        #     'formatter': 'verbose',
+        # },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+
+    },
+    'loggers': {
+        # 'django.request': {
+        #     'handlers': ['request_log'],
+        #     'level': 'DEBUG',
+        #     'propagate': True,
+        # },
+        # 'api': {
+        #     'handlers': ['app_log'],
+        #     'level': 'INFO',
+        #     'propagate': True,
+        # },
+        '': {
+            'level': 'INFO',
+            'handlers': ['console'],
+            'propagate': True,
+        }
+    },
+}
+
